@@ -1,8 +1,14 @@
 class Game {
 
-    constructor() {
+    setup() {
+        this.player = new Player()
         this.background = new Background()
+
+    }
+
+    constructor() {
         this.backgroundImages = []
+
     }
 
     preload() {
@@ -14,6 +20,8 @@ class Game {
 
         ]
 
+        this.playerImage = loadImage('assets/player/bat-1.gif')
+
     }
 
 
@@ -21,6 +29,7 @@ class Game {
         // console.log('game drawing')
         clear()
         this.background.draw()
+        this.player.draw()
     }
 
 }

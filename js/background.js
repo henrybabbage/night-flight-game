@@ -1,7 +1,7 @@
 class Background {
 
     draw() {
-        console.log('this is the background')
+        // console.log('this is the background')
         // image(game.backgroundImages[0].src, 0, 0, width, height)
         // image(game.backgroundImages[1].src, 0, 0, width, height)
         // image(game.backgroundImages[2].src, 0, 0, width, height)
