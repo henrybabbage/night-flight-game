@@ -1,4 +1,4 @@
-class Obstacle {
+class Treasure {
 
     constructor(image) {
         this.image = image
@@ -16,10 +16,10 @@ class Obstacle {
         const playerX = playerInfo.x + playerInfo.width / 2
         const playerY = playerInfo.y + playerInfo.height / 2
         // get the centre of obstacle
-        const obstacleX = this.x + this.width / 2
-        const obstacleY = this.y + this.height / 2
+        const treasureX = this.x + this.width / 2
+        const treasureY = this.y + this.height / 2
         // measure the distance between player and obstacle
-        if (dist(obstacleX, obstacleY, playerX, playerY) > 25) {
+        if (dist(treasureX, treasureY, playerX, playerY) > 25) {
             // this is not a collision
             return false
         } else {

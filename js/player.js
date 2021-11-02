@@ -7,20 +7,19 @@ class Player {
         this.width = 100;
         this.height = 100;
         this.x = 25;
-        this.y = height/2 - this.height;
+        this.y = height / 2;
         
     }
 
 
     draw() {
         // gravity
-
-        // base boundary
-        if (this.y <= height - this.height){
-            this.velocity += this.gravity
-            this.y += this.velocity
-        // reset starting position
-        // this.y = height/2 - this.height;
+        this.velocity += this.gravity
+        this.y += this.velocity
+        // if player moves to bottom of canvas correct position
+        if (this.y >= height) {
+            this.y = height - this.height;
+            this.velocity = 0;
         }
 
         image(game.playerImage, this.x, this.y, this.width, this.height)

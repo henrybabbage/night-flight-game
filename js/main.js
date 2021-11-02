@@ -1,16 +1,16 @@
 const game = new Game();
-// let song;
+let song;
 
 function preload() {
     game.preload();
-    // soundFormats('mp3');
-    // song = loadSound('assets/Swoyd_Garden_-_Twine_Bread_&_Old Spells_-_02_Nightbird.mp3', loaded);
+    soundFormats('mp3');
+    song = loadSound('assets/song/Swoyd_Garden_-_Twine_Bread_&_Old Spells_-_02_Nightbird.mp3', loaded);
 }
 
-// function loaded() {
-//     song.play();
+function loaded() {
+    song.play();
 
-// }
+}
 
 function setup() {
     // song.play();
