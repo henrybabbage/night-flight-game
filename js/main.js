@@ -1,19 +1,28 @@
 const game = new Game();
+// let song;
 
 function preload() {
-    game.preload()
-
+    game.preload();
+    // soundFormats('mp3');
+    // song = loadSound('assets/Swoyd_Garden_-_Twine_Bread_&_Old Spells_-_02_Nightbird.mp3', loaded);
 }
 
-function setup() {
+// function loaded() {
+//     song.play();
 
-    createCanvas(600, 600)
-    game.setup()
+// }
+
+function setup() {
+    // song.play();
+    // song.setVolume(0.5);
+    createCanvas(600, 600);
+    game.setup();
 
 }
 
 function draw() {
-    game.draw()
+    game.draw();
+    // song.setVolume(0.5);
 
 }
 

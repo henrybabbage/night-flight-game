@@ -1,6 +1,8 @@
 class Player {
 
     constructor() {
+        this.score = 0;
+        this.velocity = 0;
         this.gravity = 0.2;
         this.width = 100;
         this.height = 100;
@@ -12,11 +14,13 @@ class Player {
 
     draw() {
         // gravity
-        this.y += this.gravity
+
         // base boundary
-        if (this.y >= height - this.height){
+        if (this.y <= height - this.height){
+            this.velocity += this.gravity
+            this.y += this.velocity
         // reset starting position
-        this.y = height/2 - this.height;
+        // this.y = height/2 - this.height;
         }
 
         image(game.playerImage, this.x, this.y, this.width, this.height)
@@ -25,7 +29,7 @@ class Player {
 
     jump() {
         console.log('jump')
-        this.y -= 10
+        this.velocity = - 10
     }
 
 }
