@@ -1,40 +1,31 @@
 class Player {
+  constructor() {
+    this.score = 0;
+    this.velocity = 0;
+    this.gravity = 0.2;
+    this.width = 100;
+    this.height = 100;
+    this.x = 25;
+    this.y = height / 2;
+    this.alive = true;
+  }
 
-    constructor() {
-        this.score = 0;
-        this.velocity = 0;
-        this.gravity = 0.2;
-        this.width = 100;
-        this.height = 100;
-        this.x = 25;
-        this.y = height / 2;
-        this.alive = true;
+  draw() {
+    // gravity
+    this.velocity += this.gravity;
+    this.y += this.velocity;
+    // if player moves to bottom of canvas correct position
+    if (this.y >= height - this.height) {
+      this.y = height - this.height;
+      this.velocity = 0;
     }
 
+    image(game.playerImage, this.x, this.y, this.width, this.height);
+  }
 
-    draw() {
-
-        // gravity
-        this.velocity += this.gravity
-        this.y += this.velocity
-        // if player moves to bottom of canvas correct position
-        if (this.y >= height) {
-            this.y = height - this.height;
-            this.velocity = 0;
-        }
-
-        image(game.playerImage, this.x, this.y, this.width, this.height)
-
-        game.checkIfAlive()
-    // console.log(this.alive)
-
+  jump() {
+    if (game.player.alive) {
+      this.velocity = -10;
     }
-
-    jump() {
-        if (game.player.alive) {
-        console.log('jump')
-        this.velocity = - 10
-        }
-    }
-
+  }
 }

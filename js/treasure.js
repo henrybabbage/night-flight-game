@@ -10,8 +10,6 @@ class Treasure {
     }
 
     collision(playerInfo){
-
-        // console.log('collision', playerInfo)
         // get the centre of player
         const playerX = playerInfo.x + playerInfo.width / 2
         const playerY = playerInfo.y + playerInfo.height / 2
@@ -23,9 +21,7 @@ class Treasure {
             // this is not a collision
             return false
         } else {
-            // 
-            // game.player.score += 10
-            // console.log(game.player.score)
+            
             return true
         }
     }
