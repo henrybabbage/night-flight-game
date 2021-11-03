@@ -8,11 +8,12 @@ class Player {
         this.height = 100;
         this.x = 25;
         this.y = height / 2;
-        
+        this.alive = true;
     }
 
 
     draw() {
+
         // gravity
         this.velocity += this.gravity
         this.y += this.velocity
@@ -24,11 +25,16 @@ class Player {
 
         image(game.playerImage, this.x, this.y, this.width, this.height)
 
+        game.checkIfAlive()
+    // console.log(this.alive)
+
     }
 
     jump() {
+        if (game.player.alive) {
         console.log('jump')
         this.velocity = - 10
+        }
     }
 
 }

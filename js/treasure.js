@@ -31,7 +31,11 @@ class Treasure {
     }
 
     draw() {
+
+        if (game.player.alive) {
         this.x--
+        }
+        
         image(this.image, this.x, this.y, this.width, this.height)
 
     }
