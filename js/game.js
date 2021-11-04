@@ -19,7 +19,7 @@ class Game {
     this.alive = true;
     this.song;
     this.endSong;
-    this.hasStarted = false 
+    this.gameStart = false 
   }
 
   preload() {
@@ -29,34 +29,43 @@ class Game {
       { src: loadImage("assets/background/plx-3.png"), x: 0, speed: 2 },
       { src: loadImage("assets/background/plx-4.png"), x: 0, speed: 3 },
     ];
-    // preload start screen image 
-
+    
+    this.startScreenImage = loadImage("assets/startscreen/start-1.png");
     this.playerImage = loadImage("assets/player/bat-grey-1.gif");
-    this.plumImage = loadImage("assets/treasure/plum-50px.png");
-
+    this.plumImage = loadImage("assets/treasure/butterfly-brown.gif");
     this.poleImage = loadImage("assets/pole/cell-tower-300px.png");
   }
 
   draw() {
-    if (this.alive) {
-      clear();
-      this.endSong.pause();
-      this.background.draw();
-      this.player.draw();
-      this.drawTreasure();
-      // implement if condition to draw the rest of game if msg pressed
-      this.drawPole();
-      text("Score: " + score, 10, 20);
-      this.song.play();
-    } else {
-      // gameover image
-      document.body.style.backgroundColor = "black";
-      document.querySelector("#title-container > h1").innerText = "GAME OVER!";
-      document.querySelector("#title-container > h2").innerText =
-        "Press spacebar to restart";
-      this.song.pause();
-      this.endSong.play();
+
+    // this.notifs.startScreen();
+    // implement if condition to draw the rest of game if key pressed
+
+    if (game.gameStart === false) {
+          image(game.startScreenImage, 0, 0, 600, 600);
+
+    } else if (game.gameStart === true) {
+      if (this.alive) {
+        clear();
+        this.endSong.pause();
+        this.background.draw();
+        this.player.draw();
+        this.drawTreasure();
+        this.drawPole();
+        // text("Score: " + score, 10, 20);
+        this.song.play();
+      } else {
+        // gameover image
+        document.body.style.backgroundColor = "black";
+        document.querySelector("#title-container > h1").innerText = "GAME OVER!";
+        document.querySelector("#title-container > h2").innerText =
+          "Press spacebar to restart";
+        this.song.pause();
+        this.endSong.play();
+      }
     }
+
+    
   }
 
   drawPole() {

@@ -4,8 +4,8 @@ class Treasure {
         this.image = image
         this.x = width
         this.y = (Math.random() * height) / 2.5
-        this.width = 30
-        this.height = 30
+        this.width = 50
+        this.height = 70
 
     }
 
@@ -30,7 +30,7 @@ class Treasure {
     draw() {
 
         if (game.player.alive) {
-        this.x--
+        this.x -= 6;
         }
         
         image(this.image, this.x, this.y, this.width, this.height)

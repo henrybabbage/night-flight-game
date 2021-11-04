@@ -14,7 +14,6 @@ class Pole {
     // get the centre of obstacle
     const poleX = this.x + this.width / 2;
     const poleY = this.y + this.height / 2;
-
     // measure the distance between player and obstacle
     if (dist(poleX, poleY, playerX, playerY) < 125) {
       game.alive = false;
