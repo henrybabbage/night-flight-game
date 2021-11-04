@@ -4,9 +4,11 @@ let player;
 let poles = [];
 let score = 0;
 let playerImage, poleImage, plumImage, backgroundImages, startScreenImage;
+let myFont;
 // determine if game has started
 
 function preload() {
+  myFont = loadFont("assets/font/PPMondwest-Regular.otf");
   game.preload();
 }
 
@@ -14,6 +16,11 @@ function setup() {
   createCanvas(600, 600);
   game.setup();
   soundFormats("mp3");
+
+  textFont(myFont);
+  fill('#FFFFFF');
+  textSize(36);
+  text("p5*js", 10, 50);
 }
 
 function draw() {
@@ -21,19 +28,17 @@ function draw() {
 }
 
 function startGame() {
-    game.gameStart = true;
+  game.gameStart = true;
 }
 
 function keyPressed() {
-
   if (keyCode === 13) {
-      game.gameStart = true;
- }
+    game.gameStart = true;
+  }
 
   if (keyCode === 32 && game.alive) {
     game.player.jump();
   } else {
     game.reset();
   }
-
 }

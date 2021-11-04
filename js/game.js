@@ -5,8 +5,10 @@ class Game {
     this.song = new Audio(
       "assets/song/Swoyd_Garden_-_Twine_Bread_&_Old Spells_-_02_Nightbird.mp3"
     );
-    this.endSong = new Audio("assets/song/Swoyd Garden - Twine Bread & Old Spells - 05 Hanging With Stars.mp3");
-    
+    this.endSong = new Audio(
+      "assets/song/Swoyd Garden - Twine Bread & Old Spells - 05 Hanging With Stars.mp3"
+    );
+
     this.backgroundImages;
     this.treasures = [];
     this.poles = [];
@@ -19,7 +21,7 @@ class Game {
     this.alive = true;
     this.song;
     this.endSong;
-    this.gameStart = false 
+    this.gameStart = false;
   }
 
   preload() {
@@ -29,21 +31,16 @@ class Game {
       { src: loadImage("assets/background/plx-3.png"), x: 0, speed: 2 },
       { src: loadImage("assets/background/plx-4.png"), x: 0, speed: 3 },
     ];
-    
+
     this.startScreenImage = loadImage("assets/startscreen/start-1.png");
     this.playerImage = loadImage("assets/player/bat-grey-1.gif");
-    this.plumImage = loadImage("assets/treasure/butterfly-brown.gif");
+    this.plumImage = loadImage("assets/treasure/plum-50px.png");
     this.poleImage = loadImage("assets/pole/cell-tower-300px.png");
   }
 
   draw() {
-
-    // this.notifs.startScreen();
-    // implement if condition to draw the rest of game if key pressed
-
     if (game.gameStart === false) {
-          image(game.startScreenImage, 0, 0, 600, 600);
-
+      image(game.startScreenImage, 0, 0, 600, 600);
     } else if (game.gameStart === true) {
       if (this.alive) {
         clear();
@@ -57,15 +54,14 @@ class Game {
       } else {
         // gameover image
         document.body.style.backgroundColor = "black";
-        document.querySelector("#title-container > h1").innerText = "GAME OVER!";
+        document.querySelector("#title-container > h1").innerText =
+          "GAME OVER!";
         document.querySelector("#title-container > h2").innerText =
           "Press spacebar to restart";
         this.song.pause();
         this.endSong.play();
       }
     }
-
-    
   }
 
   drawPole() {
@@ -106,13 +102,16 @@ class Game {
   }
   reset() {
     this.alive = true;
-    document.body.style.backgroundColor = "white";
-    document.querySelector("#title-container > h1").innerText =
-      "Press spacebar to play";
     this.poles = [];
     this.treasures = [];
     this.player.x = 0;
     this.player.y = 0;
     score = 0;
+    document.body.style.backgroundColor = "white";
+    document.querySelector("#title-container > h1").innerText =
+      "";
+    document.querySelector("#title-container > h2").innerText =
+      "";
+    document.querySelector("#title-container > span").innerText = `SCORE: ${score}`;
   }
 }

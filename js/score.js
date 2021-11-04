@@ -8,7 +8,6 @@
 
 //     draw() {
 
-//         fill(83, 56, 70)
 //         textAlign(LEFT)
 //         text(
 //             `Score: ${this.points}`,

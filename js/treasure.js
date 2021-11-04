@@ -4,8 +4,8 @@ class Treasure {
         this.image = image
         this.x = width
         this.y = (Math.random() * height) / 2.5
-        this.width = 50
-        this.height = 70
+        this.width = 30
+        this.height = 30
 
     }
 
@@ -22,7 +22,7 @@ class Treasure {
             return false
         } else {
             score += 10
-		    console.log(game.player.score)
+		    document.querySelector("#title-container > span").innerText = `SCORE: ${score}`;;
             return true
         }
     }

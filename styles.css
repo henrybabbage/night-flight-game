@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   font-family: 'Press Start 2P', cursive;
   font-size: 10px;
+  background-color: black !important;
 }
 #title-container {
   display: flex;
@@ -15,6 +16,8 @@ body {
   align-content: center;
   justify-content: space-around;
   align-items: center;
+  font-size: 12px;
+  margin: 5px;
 }
 
 h1,
@@ -22,6 +25,9 @@ h2 {
   text-align: center;
   color: white;
   margin: 0;
+}
+div, span {
+  color: white;
 }
 
 .container {
