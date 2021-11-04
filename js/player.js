@@ -19,13 +19,23 @@ class Player {
       this.y = height - this.height;
       this.velocity = 0;
     }
+    // if player moves to top of canvas correct position
+    if (this.y <= 0) {
+        this.y = 0;
+        this.velocity = 0;
+      }
 
     image(game.playerImage, this.x, this.y, this.width, this.height);
   }
 
   jump() {
     if (game.player.alive) {
-      this.velocity = -10;
+      this.velocity = -6;
     }
   }
+
+//   score(){
+
+//   }
+
 }

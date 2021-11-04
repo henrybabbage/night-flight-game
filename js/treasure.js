@@ -21,7 +21,8 @@ class Treasure {
             // this is not a collision
             return false
         } else {
-            
+            score += 10
+		    console.log(game.player.score)
             return true
         }
     }
