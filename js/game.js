@@ -32,7 +32,7 @@ class Game {
       { src: loadImage("assets/background/plx-4.png"), x: 0, speed: 3 },
     ];
 
-    this.startScreenImage = loadImage("assets/startscreen/start-1.png");
+    this.startScreenImage = loadImage("assets/startscreen/start-screen.gif");
     this.playerImage = loadImage("assets/player/bat-grey-1.gif");
     this.plumImage = loadImage("assets/treasure/plum-50px.png");
     this.poleImage = loadImage("assets/pole/cell-tower-300px.png");
