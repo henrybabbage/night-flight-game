@@ -55,9 +55,9 @@ class Game {
         // gameover image
         document.body.style.backgroundColor = "black";
         document.querySelector("#title-container > h1").innerText =
-          "GAME OVER!";
+          "GAME OVER";
         document.querySelector("#title-container > h2").innerText =
-          "Press spacebar to restart";
+          "PRESS SPACEBAR TO RESTART";
         this.song.pause();
         this.endSong.play();
       }

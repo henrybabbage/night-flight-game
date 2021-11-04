@@ -6,8 +6,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Press Start 2P', sans-serif;
   font-size: 10px;
+  font-weight:lighter;
   background-color: black !important;
 }
 #title-container {
@@ -16,15 +17,17 @@ body {
   align-content: center;
   justify-content: space-around;
   align-items: center;
-  font-size: 12px;
-  margin: 5px;
+  font-size: 10px;
+  margin: 14px;
 }
 
 h1,
 h2 {
   text-align: center;
+  font-size: 10px;
   color: white;
-  margin: 0;
+  margin: 10;
+  padding: 0;
 }
 div, span {
   color: white;

@@ -5,7 +5,6 @@ let poles = [];
 let score = 0;
 let playerImage, poleImage, plumImage, backgroundImages, startScreenImage;
 let myFont;
-// determine if game has started
 
 function preload() {
   myFont = loadFont("assets/font/PPMondwest-Regular.otf");
