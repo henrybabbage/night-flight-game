@@ -2,8 +2,9 @@ const game = new Game();
 let song;
 let player;
 let poles = [];
+let drones = [];
 let score = 0;
-let playerImage, poleImage, plumImage, backgroundImages, startScreenImage;
+let playerImage, poleImage, plumImage, backgroundImages, startScreenImage, droneImage;
 let myFont;
 
 function preload() {

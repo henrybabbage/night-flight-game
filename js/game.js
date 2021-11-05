@@ -12,12 +12,14 @@ class Game {
     this.backgroundImages;
     this.treasures = [];
     this.poles = [];
+    this.drones = [];
   }
 
   constructor() {
     this.backgroundImages = [];
     this.plumImage;
     this.poleImage;
+    this.droneImage;
     this.alive = true;
     this.song;
     this.endSong;
@@ -36,6 +38,7 @@ class Game {
     this.playerImage = loadImage("assets/player/bat-grey-1.gif");
     this.plumImage = loadImage("assets/treasure/treasure-transparent-85px.gif");
     this.poleImage = loadImage("assets/pole/cell-tower-300px.png");
+    this.droneImage = loadImage("assets/drone/drone-115w-80h-px.gif")
   }
 
   draw() {
@@ -49,6 +52,7 @@ class Game {
         this.player.draw();
         this.drawTreasure();
         this.drawPole();
+        this.drawDrone();
         // text("Score: " + score, 10, 20);
         this.song.play();
       } else {
@@ -83,6 +87,25 @@ class Game {
     });
   }
 
+  drawDrone() {
+    if (frameCount % 180 === 0) {
+      this.drones.push(new Drone(this.droneImage));
+    }
+    // iterate over treasures array and call draw function for each obstacle
+    this.drones.forEach(function (drone) {
+      drone.draw();
+    });
+
+    this.drones = this.drones.filter((drone) => {
+      drone.collision(this.player);
+      if (drone.x < 0 - drone.width) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+  }
+
   drawTreasure() {
     if (frameCount % 180 === 0) {
       this.treasures.push(new Treasure(this.plumImage));
@@ -105,6 +128,7 @@ class Game {
     this.alive = true;
     this.poles = [];
     this.treasures = [];
+    this.drones = [];
     this.player.x = 0;
     this.player.y = 0;
     score = 0;
