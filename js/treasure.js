@@ -3,7 +3,7 @@ class Treasure {
     constructor(image) {
         this.image = image
         this.x = width
-        this.y = (Math.random() * height) / 2.5
+        this.y = (Math.random() * height)
         this.width = 30
         this.height = 30
 

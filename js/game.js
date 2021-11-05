@@ -32,9 +32,9 @@ class Game {
       { src: loadImage("assets/background/plx-4.png"), x: 0, speed: 3 },
     ];
 
-    this.startScreenImage = loadImage("assets/startscreen/start-screen.gif");
+    this.startScreenImage = loadImage("assets/startscreen/nightflight-start-screen.gif");
     this.playerImage = loadImage("assets/player/bat-grey-1.gif");
-    this.plumImage = loadImage("assets/treasure/plum-50px.png");
+    this.plumImage = loadImage("assets/treasure/treasure-transparent-85px.gif");
     this.poleImage = loadImage("assets/pole/cell-tower-300px.png");
   }
 
@@ -100,6 +100,7 @@ class Game {
       }
     });
   }
+
   reset() {
     this.alive = true;
     this.poles = [];
